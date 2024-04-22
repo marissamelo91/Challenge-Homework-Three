@@ -1,39 +1,42 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
+const employeeData = [];
 
 // Collect employee data
 const collectEmployees = function () {
-  let employee = []
+
+  // TODO: Get user input to create and return an array of employee objects
+  let addEmployee = true
+
+  while (addEmployee) {
+
+    let firstName = prompt("Enter First Name")
+    let lastName = prompt("Enter Last Name")
+    let salary = prompt("Enter Salary")
+
+    let employee = {
+      firstName:firstName,
+      lastName:lastName,
+      salary:Number (salary),
+    }
+    employeeData.push({ firstName, lastName, salary });
+
+  addEmployee = confirm("Do you want to add another employee?")
+  console.log("addEmployee", addEmployee)
+  }
+  return employeeData
+};
+ 
+// Display the average salary 
+const displayAverageSalary = function (employeesArray) {
+  // TODO: Calculate and display the average salary
+  let sum = 0;
+  for (let i = 0; i < employeesArray.length; i++) {
+    sum = sum + employeesArray[i]
+  }
+  let average = sum / employeesArray.length
+  console.log("average", average)
 }
-// TODO: Get user input to create and return an array of employee objects
-let firstName = "";
-let lastName = "";
-let salary = "";
-
-while (firstName === "") {
-  firstName = window.prompt('Enter First Name')
-}
-while (lastName === "") {
-  lastName = window.prompt('Enter Last Name')
-}
-while (salary === "") {
-  salary = window.prompt('Enter Salary')
-}
-
-console.log('($firstName)');
-console.log('($lastName)');
-console.log('($salary)');
-
-
-// TODO: Calculate and display the average salary
-
-let sum = 0
-for (let i = 0; i < employeesArray.length; i++) {
-  sum = sum + employeesArray[i]
-}
-let average = sum / employeesArray.length
-console.log("average", average)
-
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
@@ -45,7 +48,6 @@ const getRandomEmployee = function (employeesArray) {
   STARTER CODE
   Do not modify any of the code below this line:
 */
-
 // Display employee data in an HTML table
 const displayEmployees = function (employeesArray) {
   // Get the employee table
