@@ -3,7 +3,7 @@ Challenge-Homework-Three
 # 03 JavaScript: Employee Payroll Tracker
 
 # Deployed Link
-[deployed link]
+[deployed link](https://marissamelo91.github.io/Challenge-Homework-Three/)
 
 # Screenshot of Project
 ![screenshot](./Employee-Payroll-Tracker.png)
